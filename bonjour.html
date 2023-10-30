@@ -6,9 +6,10 @@
         #lbl {
             font-family: Arial, sans-serif;
             font-size: xx-large;
-            color: #D2A303; /* Jaune moutarde */
+            color: #D2A303; 
+            text-align: left;
             padding: 5px;
-            border: 1px solid #ececec;
+            border: 1px solid #bf8c0b;
             text-align: center;
             line-height: 1.5;
             height: 85%;
@@ -46,7 +47,7 @@
         var hrs = today.getHours();
         var dayOfWeek = weekday[today.getDay()];
 
-        var options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        var options = { year: 'numeric', month: 'long', day: 'numeric' };
         options.month = 'long';
         options.locale = 'fr-FR';
 
@@ -54,15 +55,19 @@
 
         var greet;
 
-        if (hrs < 12)
-            greet = 'Bonjour  ';
+   if (hrs >= 3 && hrs <= 7)
+            greet = 'Déjà réveillée ?';
+        else if (hrs >= 7 && hrs < 12)
+            greet = 'Bonjour Vickie.';
         else if (hrs >= 12 && hrs <= 17)
-            greet = 'Bon après-midi ';
-        else if (hrs >= 17 && hrs <= 24)
-            greet = 'Bonsoir  ';
+            greet = 'Bon après-midi Vickie.';
+        else if (hrs >= 17 && hrs <= 22)
+            greet = 'Bonsoir Vickie.';
+        else
+            greet = 'Encore debout ?';
 
         document.getElementById('lbl').innerHTML =
-           `<div id="date"> ${dayOfWeek}, le ${date}</div>` + greet;
+            `<div id="date">${dayOfWeek}, ${date}</div> <strong>${greet}</strong>`;
     </script>
 </body>
 </html>
