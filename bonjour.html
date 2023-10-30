@@ -28,19 +28,19 @@ body{
 
 <script>
     var weekday = new Array(7);
-    weekday[0] = "Dimanche";
-    weekday[1] = "Lundi";
-    weekday[2] = "Mardi";
-    weekday[3] = "Mercredi";
-    weekday[4] = "Jeudi";
-    weekday[5] = "Vendredi";
-    weekday[6] = "Samedi";
+    weekday[0] = "dimanche";
+    weekday[1] = "lundi";
+    weekday[2] = "mardi";
+    weekday[3] = "mercredi";
+    weekday[4] = "jeudi";
+    weekday[5] = "vendredi";
+    weekday[6] = "samedi";
 
     
     var today = new Date();
     var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear()  ;
+    var date = dayOfWeek+" " + today.getDate() + " " + (today.getMonth()+1) +' '+today.getFullYear()  ;
 
     var greet;
 
@@ -52,6 +52,6 @@ body{
         greet = 'Good Evening  ';
 
     document.getElementById('lbl').innerHTML =
-        greet+=`<div id="date"> It's ${date}</div>`;
+        greet+ 'Vickie' =`<div id="date"> C'est ${date}</div>`;
 </script> 
 </html>
